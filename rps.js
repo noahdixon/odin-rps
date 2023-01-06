@@ -1,12 +1,9 @@
 function getComputerChoice(){
-    let choiceVal = Math.floor(Math.random()*3);
-    if (choiceVal === 0) {
-        return 'Rock';
-    }
-    if (choiceVal === 1) {
-        return 'Paper';
-    }
-        return 'Scissors';
+    //Initialize array of possible choices
+    const choices = ["Rock", "Paper", "Scissors"];
+
+    //Return random element from array using Math.random()
+    return choices[Math.floor(Math.random()*3)];
 }
 
 console.log(getComputerChoice());
