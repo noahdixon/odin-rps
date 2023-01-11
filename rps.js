@@ -36,25 +36,70 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
 
     const playerSelectionCased = playerSelection.charAt(0).toUpperCase() + playerSelection.substring(1).toLowerCase();
-    console.log(playerSelectionCased);
+    if (playerSelectionCased !== 'Rock' && playerSelectionCased !== 'Paper' && playerSelectionCased !== 'Scissors') {
+        return -1;
+    }
 
     const outcomes = [['Drew', 'Lose', 'Win'],
                       ['Win', 'Drew', 'Lose'],
                       ['Lose', 'Win', 'Drew']];
     
-    const result = outcomes[selectionValue(playerSelection)][selectionValue(computerSelection)];
+    const result = outcomes[selectionValue(playerSelectionCased)][selectionValue(computerSelection)];
 
     if (result === 'Win') {
-        return 'You win! ' + playerSelectionCased + ' beats ' + computerSelection;
+        return 'You win! ' + playerSelectionCased + ' beats ' + computerSelection + '.';
     } 
     
     if (result === 'Lose') {
-        return 'You Lose! ' + computerSelection + ' beats ' + playerSelectionCased;
+        return 'You lose! ' + computerSelection + ' beats ' + playerSelectionCased + '.';
     }
 
-    return 'You Drew! ' + playerSelectionCased + ' ties ' + computerSelection;
+    return 'You draw! ' + playerSelectionCased + ' ties ' + computerSelection + '.';
   }
 
-const playerSelection = "pApER";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+  /**
+ * Simulates a five round game of rock, paper, scissors.
+ *
+ * @return {string} The result of the game.
+ */
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let roundResult;
+    let i = 0;
+    
+    while (i < 5) {
+
+        //get player selection with window.prompt()
+        roundResult = playRound(window.prompt('Enter your move. Rock, paper, or scissors.'), getComputerChoice());
+        if (roundResult === -1) { //if player selection is invalid
+            console.log('Invalid selection. Please enter rock, paper, or scissors.');
+            continue;
+        }
+
+        console.log(roundResult);
+        
+        switch (roundResult.charAt(4)) {
+            case 'w':
+                playerScore++;
+                break;
+            case 'l':
+                computerScore++;
+            default:
+                break;
+        }
+
+        i++;
+     }
+
+     if (playerScore > computerScore) {
+        console.log('You won the game ' + playerScore + ' to ' + computerScore + '!');
+     } else if (computerScore > playerScore) {
+        console.log('You lost the game ' + computerScore + ' to ' + playerScore + '.');
+     } else {
+        console.log('You drew the game ' + playerScore + ' to ' + computerScore + '.');
+     }
+
+}
+
+game();
