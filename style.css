@@ -37,6 +37,7 @@ h1 {
     justify-content: center;
     flex-wrap: wrap;
     background-color: #564d59;
+
     width: 100%;
 }
 
@@ -51,34 +52,6 @@ h1 {
     border-radius: 10px;
     box-shadow: 10px 10px;
     overflow: hidden;
-}
-
-@media (max-width: 870px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    .player-wrapper {
-        scale: 0.75;
-        margin: 25px;
-    } 
-
-}
-
-@media (max-width: 700px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    #player-section {
-        width: 500px;
-    }
-
-    .player-wrapper {
-        scale: 0.75;
-        margin: 0;
-    } 
-
 }
 
 .player-header {
@@ -118,6 +91,10 @@ img {
     
 }
 
+#results {
+    color: aliceblue;
+}
+
 .footer {
     height: 40px;
     font-size: 10px;
@@ -127,4 +104,43 @@ img {
     position: fixed;
     width: 100%;
     border-width: 2px;
+}
+
+@media (max-width: 870px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .player-wrapper {
+        scale: 0.75;
+        margin: 25px;
+    } 
+
+    #results {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    #player-section {
+        /* width: 500px; */
+    }
+
+    .player-wrapper {
+        scale: 0.6;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: -30px;
+        margin-right: -30px;
+    } 
+
+    #results {
+        font-size: 12px;
+    }
+
 }

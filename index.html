@@ -17,18 +17,18 @@
                 Player
             </div>
             <div class="buttons-wrapper center-items">
-                <button>
+                <button id="rock" class="player-button">
                     <img src="rock.png" alt="rock.png">
                 </button>
-                <button>
+                <button id="paper" class="player-button">
                     <img src="paper.png" alt="paper.png">
                 </button>
-                <button>
+                <button id="scissors" class="player-button">
                     <img src="scissors.png" alt="scissors.png">
                 </button>
             </div>
-            <div class="score-wrapper center-items">
-                Score: 
+            <div id="player-score" class="score-wrapper center-items">
+                Score: 0
             </div>
         </div>
 
@@ -37,21 +37,23 @@
                 CPU
             </div>
             <div class="buttons-wrapper center-items">
-                <button>
+                <button id="cpu-rock" class="cpu-button">
                     <img src="rock.png" alt="rock.png">
                 </button>
-                <button>
+                <button id="cpu-paper" class="cpu-button">
                     <img src="paper.png" alt="paper.png">
                 </button>
-                <button>
+                <button id="cpu-scissors" class="cpu-button">
                     <img src="scissors.png" alt="scissors.png">
                 </button>
             </div>
-            <div class="score-wrapper center-items">
-                Score: 
+            <div id="cpu-score" class="score-wrapper center-items">
+                Score: 0
             </div>
         </div>
     </div>
+
+    <p id="results"></p>
 
     <div class="footer center-items">
         Copyright © The Odin Project
